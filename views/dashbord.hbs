@@ -1,0 +1,28 @@
+<h1>welcome </h1>
+
+{{#if length}}
+<p>All Users
+</p>
+<ul>
+    {{#each  responce}}
+    <li style="list-style: none;" ><div class="box" >
+        <div class="row">
+
+     {{this.user_name}}
+        </div>
+        <div class="row">
+
+     {{this.user_email}}
+        </div>
+    </div>
+        <a href={{constructUpdate}}><button class="btn">Edit</button></a>
+        <form  action={{constructDelete}} method="POST">
+            <input class="btn" type="submit" value="Delete">
+        </form>
+    </li>
+    {{/each}}
+    <a href="/user/create"><button>insert user</button></a>
+</ul>
+{{else}}
+<h1>hey {{name}} insert user details <a href="/user/create">hear</a></h1>
+{{/if}}

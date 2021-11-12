@@ -1,0 +1,6 @@
+.insert{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 30px;
+    background-color: aliceblue;
+}
