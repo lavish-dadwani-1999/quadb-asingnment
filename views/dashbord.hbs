@@ -1,28 +1,62 @@
-<h1>welcome </h1>
+<h1  style="margin-left: 15px;">welcome </h1>
 
 {{#if length}}
-<p>All Users
+<p style="margin-left: 15px;">All Users
 </p>
-<ul>
+
+
+
+    <table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Edit Users</th>
+    <th>Delete Users</th>
+  </tr>
     {{#each  responce}}
-    <li style="list-style: none;" ><div class="box" >
-        <div class="row">
+    <tr>
+    <td>{{this.user_name}}</td>
+    <td>{{this.user_email}}</td>
+<td>
 
-     {{this.user_name}}
-        </div>
-        <div class="row">
-
-     {{this.user_email}}
-        </div>
-    </div>
-        <a href={{constructUpdate}}><button class="btn">Edit</button></a>
-        <form  action={{constructDelete}} method="POST">
+<a href={{constructUpdate}}><button class="btn">Edit</button></a>
+</td> 
+     <td>
+           <form  action={{constructDelete}} method="POST">
             <input class="btn" type="submit" value="Delete">
         </form>
-    </li>
+     </td>
+      
+  </tr>
+        
     {{/each}}
-    <a href="/user/create"><button>insert user</button></a>
-</ul>
+    </table>
+
+    <a style="margin-left: 15px;" href="/user/create"><button class="btn">insert user</button></a>
+
 {{else}}
-<h1>hey {{name}} insert user details <a href="/user/create">hear</a></h1>
+<h1>hey  insert user details <a href="/user/create">hear</a></h1>
 {{/if}}
+
+
+
+{{!-- <table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr> --}}
+
+
+
+     

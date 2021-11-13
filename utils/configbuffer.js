@@ -7,3 +7,4 @@ module.exports = function(originalName, buffer) {
   var extension = path.extname(originalName);
   return dataURIChild.format(extension, buffer).content;
 };
+ 
